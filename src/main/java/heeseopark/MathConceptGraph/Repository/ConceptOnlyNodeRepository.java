@@ -1,5 +1,5 @@
 package heeseopark.MathConceptGraph.Repository;
 
-public interface ConceptRepository {
+public class ConceptOnlyNodeRepository {
 
 }

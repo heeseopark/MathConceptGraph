@@ -1,4 +1,4 @@
-package heeseopark.MathConceptGraph.Domain;
+package heeseopark.MathConceptGraph.Temporary.Domain;
 
 public class Concept {
 
