@@ -1,6 +1,6 @@
-package heeseopark.MathConceptGraph.Temporary.Repository;
+package heeseopark.Temporary.Repository;
 
-import heeseopark.MathConceptGraph.Temporary.Domain.Expression;
+import heeseopark.Temporary.Domain.Expression;
 
 import java.lang.reflect.Member;
 import java.util.List;

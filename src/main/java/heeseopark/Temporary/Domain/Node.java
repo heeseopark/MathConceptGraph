@@ -1,4 +1,4 @@
-package heeseopark.MathConceptGraph.Temporary.Domain;
+package heeseopark.Temporary.Domain;
 
 import java.util.HashMap;
 import java.util.Map;
