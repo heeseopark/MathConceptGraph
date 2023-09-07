@@ -36,4 +36,25 @@ public class ConceptNodeService {
         return conceptNodeRepository.findOne(nodeId);
     }
 
+    /*
+     * make these recommended methods
+     * 
+     * methods related to CRUD operations
+     * 
+     * createNode(String name)
+     * getNodeByid(Long id)
+     * updateConceptNode(arguement로 entity가 들어가야하는지 id가 들어가야하는지)
+     * deleteConceptNode(Long id)
+     * 
+     * methods related to utility methods
+     * 
+     * findNodeByName(argument로 string name이 들어가야하는지 entity가 들어가야하는지)
+     *  return Long id
+     * getNodeByGrade
+     * 
+     * 서비스 레이어에서는 erorr를 다룰 수 있어야함
+     * the serivce layer needs to deal with error detectioning
+     * 
+     */
+
 }

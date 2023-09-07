@@ -2,13 +2,11 @@ package heeseopark.MathConceptGraph.Domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.List;
 
 @Entity
-@Table(name = "node")
-@Getter @Setter
+@Getter
 public class ConceptNode {
 
     @Id @GeneratedValue
