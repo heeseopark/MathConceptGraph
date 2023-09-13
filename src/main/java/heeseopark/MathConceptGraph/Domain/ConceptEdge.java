@@ -1,10 +1,13 @@
 package heeseopark.MathConceptGraph.Domain;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
-@Getter
+@Getter @Setter
+@Builder
 public class ConceptEdge {
 
     @Id
@@ -26,20 +29,5 @@ public class ConceptEdge {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "end_node_id")
     private ConceptNode endNode;
-
-    /**
-     * 
-     * need to build custom setters like setName, setGrade etc
-     * 
-     * entity create 때 build design pattern을 써서 create을 다루고
-     * 
-     * update는 builder design pattern과 비슷한 느낌으로 method를 만들자.
-     * 
-     * updating methods
-     * updateName
-     * updateGrade
-     * updateMeaning
-     * 
-     */
 
 }

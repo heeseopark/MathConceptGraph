@@ -1,12 +1,13 @@
 package heeseopark.MathConceptGraph.Domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Getter
+@Getter @Setter
+@Builder
 public class ConceptNode {
 
     @Id @GeneratedValue
@@ -26,6 +27,4 @@ public class ConceptNode {
     @OneToMany(mappedBy = "endNode", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ConceptEdge> targetEdges;
 
-
 }
-

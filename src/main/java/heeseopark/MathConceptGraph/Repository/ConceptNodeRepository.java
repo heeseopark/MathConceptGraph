@@ -22,6 +22,10 @@ public class ConceptNodeRepository {
         return em.find(ConceptNode.class, id);
     }
 
+    public boolean existById(Long id){
+        return findOne(id) != null;
+    }
+
     public List<ConceptNode> findAll(){
         return em.createQuery("select n from ConceptNode n", ConceptNode.class)
                 .getResultList();
@@ -39,11 +43,11 @@ public class ConceptNodeRepository {
                 .getResultList();
     }
 
-    public void delete(Long id){
-        ConceptNode node = findOne(id);
-        if (node != null) {
-            em.remove(node);
-        }
+    public void deleteById(Long id){
+        em.remove(findOne(id));
     }
+
+    // entity manager가 DB에 직접적으로 어떻게 연결되는지 볼 필요가 있을듯//
+    // updat 관련해서는 jpa dirty checking으로 해결됨.
 }
 

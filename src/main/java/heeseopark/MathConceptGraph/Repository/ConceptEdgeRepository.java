@@ -1,6 +1,7 @@
 package heeseopark.MathConceptGraph.Repository;
 
 import heeseopark.MathConceptGraph.Domain.ConceptEdge;
+import heeseopark.MathConceptGraph.Domain.ConceptNode;
 import heeseopark.MathConceptGraph.Domain.GradeLevel;
 import jakarta.persistence.*;
 import org.springframework.stereotype.Repository;
@@ -21,8 +22,18 @@ public class ConceptEdgeRepository {
         return em.find(ConceptEdge.class, id);
     }
 
+    public boolean existById(Long id){
+        return findOne(id) != null;
+    }
+
     public List<ConceptEdge> findAll(){
         return em.createQuery("select e from ConceptEdge e", ConceptEdge.class)
+                .getResultList();
+    }
+
+    public List<ConceptEdge> findByName(String name){
+        return em.createQuery("select n from ConceptEdge n where n.name = :name", ConceptEdge.class)
+                .setParameter("name", name)
                 .getResultList();
     }
 
@@ -32,11 +43,9 @@ public class ConceptEdgeRepository {
                 .getResultList();
     }
 
-    public void delete(Long id){
-        ConceptEdge edge = findOne(id);
-        if (edge != null) {
-            em.remove(edge);
-        }
+    public void deleteById(Long id){
+        em.remove(findOne(id));
     }
+
 }
 
