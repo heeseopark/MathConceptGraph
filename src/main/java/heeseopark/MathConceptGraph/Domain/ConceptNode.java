@@ -1,12 +1,13 @@
 package heeseopark.MathConceptGraph.Domain;
 
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.*;
 
 import java.util.List;
 
 @Entity
-@Getter
+@Getter @Setter
+@Builder
 public class ConceptNode {
 
     @Id @GeneratedValue
@@ -43,4 +44,3 @@ public class ConceptNode {
 
 
 }
-

@@ -1,14 +1,10 @@
 package heeseopark.MathConceptGraph.Domain;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
-@Getter
-@NoArgsConstructor // This is for JPA
-@Builder // This is Lombok's Builder
+@Getter @Setter @Builder
 public class ConceptEdge {
 
     @Id
@@ -44,3 +40,4 @@ public class ConceptEdge {
         this.meaning = newMeaning;
     }
 }
+
