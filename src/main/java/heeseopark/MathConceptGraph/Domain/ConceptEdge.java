@@ -27,17 +27,6 @@ public class ConceptEdge {
     @JoinColumn(name = "end_node_id")
     private ConceptNode endNode;
 
-    // Updating methods
-    public void updateName(String newName) {
-        this.name = newName;
-    }
 
-    public void updateGrade(GradeLevel newGrade) {
-        this.grade = newGrade;
-    }
-
-    public void updateMeaning(String newMeaning) {
-        this.meaning = newMeaning;
-    }
 }
 
