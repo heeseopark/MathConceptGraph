@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div class="jumbotron">
+        <h1>MathConceptGraph</h1>
+        <div class="container">
+        <p class="lead">노드 기능</p>
+        <p>
+            <a class="btn btn-lg btn-secondary" href="/nodes/new">노드 추가</a>
+            <a class="btn btn-lg btn-secondary" href="/nodes">노드 목록</a>
+        </p>
+        </div>
+        <div class="container">
+        <p class="lead">엣지 기능</p>
+        <p>
+            <a class="btn btn-lg btn-dark" href="/items/new">엣지 등록</a>
+            <a class="btn btn-lg btn-dark" href="/items">엣지 목록</a>
+        </p>
+        </div>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>

@@ -21,10 +21,13 @@ public class ConceptEdgeService {
     ConceptEdgeRepository conceptEdgeRepository;
     
     @Transactional
-    public Long createEdge(ConceptEdge edge) {
+    public Long createEdge(ConceptEdge edge, ConceptNode startNode, ConceptNode endNode) {
+        edge.setStartNode() = startNode;
+        edge.setEndNode() = endNode;
         validateDuplicateEdge(edge);
         validateNodeConnection(edge);
         conceptEdgeRepository.save(edge);
+        // node의 sourceEdge, targetEdge는 알아서 업데이트가 되는 것인가?
         return edge.getId();
     }
 
@@ -49,10 +52,6 @@ public class ConceptEdgeService {
         }
     }
 
-    private void updateEdge(ConceptEdge edge){
-
-
-    }
 
     public void deleteEdgeById(Long nodeId) {
         if (!conceptEdgeRepository.existById(nodeId)) {
@@ -60,6 +59,11 @@ public class ConceptEdgeService {
         }
 
         conceptEdgeRepository.deleteById(nodeId);
+    }
+    
+    public void addIntermediateNode(ConceptEdge currentEdge, ConceptNode addNode, ConceptEdge addEdge){
+        // currentNode가 addNode의 앞으로 가는지 뒤로 가는지 if문으로 구분하는 로직도 아마 여기에 있어야 할듯
+        // createEdge 여기에서 쓸 수 있을듯 -> 컴포넌트화 첫 활용:)
     }
 
 

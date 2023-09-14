@@ -27,4 +27,20 @@ public class ConceptNode {
     @OneToMany(mappedBy = "endNode", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ConceptEdge> targetEdges;
 
+    /**
+     *
+     * need to build custom setters like setName, setGrade etc
+     *
+     * entity create 때 build design pattern을 써서 create을 다루고
+     *
+     * update는 builder design pattern과 비슷한 느낌으로 method를 만들자.
+     *
+     * updating methods
+     * updateName
+     * updateGrade
+     * updateMeaning
+     *
+     */
+
+
 }
