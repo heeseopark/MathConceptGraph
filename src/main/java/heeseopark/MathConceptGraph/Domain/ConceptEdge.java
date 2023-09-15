@@ -27,6 +27,8 @@ public class ConceptEdge {
     @JoinColumn(name = "end_node_id")
     private ConceptNode endNode;
 
+    // 단원 field 추가하기
+
 
 }
 
